@@ -28,7 +28,8 @@ android {
         minSdkVersion 21
         targetSdkVersion 33
         versionCode 1
-        versionName "0.0.1" //Pre-release 2022-Nov-28
+//        versionName "0.0.1" //Pre-release 2022-Nov-28
+        versionName "0.0.2" //Pre-release 2022-Nov-29
         multiDexEnabled true
     }
 

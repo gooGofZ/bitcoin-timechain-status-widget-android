@@ -27,15 +27,14 @@ class MempoolAppWidget : AppWidgetProvider() {
         //val scope = CoroutineScope(newSingleThreadContext("name"))
 
         for (appWidgetId in appWidgetIds) {
-            // GlobalScope.launch {
-            // }
-
-            CoroutineScope(Dispatchers.IO).launch {
+            // GlobalScope.launch { // Delicate API
+            // CoroutineScope(Dispatchers.IO).launch { // Work at add and manual refresh
+            // GlobalScope.launch(Dispatchers.Main) { // Work at add and manual refresh // Delicate API
+            CoroutineScope(Dispatchers.Main).launch {
                 updateAppWidget(context, appWidgetManager, appWidgetId)
             }
         }
     }
-
 
     override fun onEnabled(context: Context) {
         // Enter relevant functionality for when the first widget is created
